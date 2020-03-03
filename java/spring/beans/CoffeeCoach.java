@@ -1,11 +1,16 @@
 package spring.beans;
 
 import iface.Coach;
+import spring.services.LoggingService;
+import spring.services.ValidationService;
 
 public class CoffeeCoach implements Coach {
 
     private String inventoryLevel;
     private String emailAddress;
+
+    private LoggingService loggingService;
+    private ValidationService validationService;
 
     public CoffeeCoach() {
 
@@ -14,6 +19,11 @@ public class CoffeeCoach implements Coach {
 
     public String getInventoryLevel() {
         return inventoryLevel;
+    }
+
+    public void setLoggingService(LoggingService loggingService) {
+        System.out.println("in CoffeeCoach setter");
+        this.loggingService = loggingService;
     }
 
     public void setInventoryLevel(String inventoryLevel) {
